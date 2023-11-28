@@ -17,8 +17,8 @@
             <PropertyRef Name="MaSV" />
           </Key>
           <Property Name="MaSV" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="HoSV" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="TenSV" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="HoSV" Type="nvarchar" MaxLength="255" />
+          <Property Name="TenSV" Type="nvarchar" MaxLength="255" />
           <Property Name="GioiTinh" Type="bit" />
           <Property Name="NgaySinh" Type="date" />
           <Property Name="AnhSV" Type="nvarchar" MaxLength="50" />
@@ -69,8 +69,8 @@
             <PropertyRef Name="MaSV" />
           </Key>
           <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HoSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenSV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HoSV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TenSV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="GioiTinh" Type="Boolean" />
           <Property Name="NgaySinh" Type="DateTime" Precision="0" />
           <Property Name="AnhSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -92,7 +92,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="KT0720_63135901Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="KT0720_63135901Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Lops" EntityType="Self.Lop" />
           <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
           <AssociationSet Name="FK__SinhVien__MaLop__3A81B327" Association="Self.FK__SinhVien__MaLop__3A81B327">
@@ -109,7 +109,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="KT0720_63135901ModelStoreContainer" CdmEntityContainer="KT0720_63135901Entities1">
+        <EntityContainerMapping StorageEntityContainer="KT0720_63135901ModelStoreContainer" CdmEntityContainer="KT0720_63135901Entities">
           <EntitySetMapping Name="Lops">
             <EntityTypeMapping TypeName="KT0720_63135901Model.Lop">
               <MappingFragment StoreEntitySet="Lop">

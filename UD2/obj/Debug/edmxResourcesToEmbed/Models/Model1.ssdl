@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UD2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LoaiMatHang">
+    <Key>
+      <PropertyRef Name="MaLoaiMatHang" />
+    </Key>
+    <Property Name="MaLoaiMatHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenLoaiMatHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MatHang">
+    <Key>
+      <PropertyRef Name="MaHang" />
+    </Key>
+    <Property Name="MaHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MaLoaiMatHang" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__MatHang__MaLoaiM__398D8EEE">
+    <End Role="LoaiMatHang" Type="Self.LoaiMatHang" Multiplicity="0..1" />
+    <End Role="MatHang" Type="Self.MatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiMatHang">
+        <PropertyRef Name="MaLoaiMatHang" />
+      </Principal>
+      <Dependent Role="MatHang">
+        <PropertyRef Name="MaLoaiMatHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UD2ModelStoreContainer">
+    <EntitySet Name="LoaiMatHang" EntityType="Self.LoaiMatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatHang" EntityType="Self.MatHang" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__MatHang__MaLoaiM__398D8EEE" Association="Self.FK__MatHang__MaLoaiM__398D8EEE">
+      <End Role="LoaiMatHang" EntitySet="LoaiMatHang" />
+      <End Role="MatHang" EntitySet="MatHang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1DB953F8-34CA-476E-9634-CB63E0D0B74E}</ProjectGuid>
+    <ProjectGuid>{0061915A-55E0-44B7-9C65-D743584B1FDA}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44329</IISExpressSSLPort>
+    <IISExpressSSLPort>44331</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -129,9 +129,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SinhVien0720_63135901Controller.cs" />
+    <Compile Include="Controllers\SinhVien_63135901Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,12 +227,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\SinhVien0720_63135901\Create.cshtml" />
-    <Content Include="Views\SinhVien0720_63135901\Delete.cshtml" />
-    <Content Include="Views\SinhVien0720_63135901\Details.cshtml" />
-    <Content Include="Views\SinhVien0720_63135901\Edit.cshtml" />
-    <Content Include="Views\SinhVien0720_63135901\Index.cshtml" />
-    <Content Include="Views\GioiThieu\GioiThieu_63135901.cshtml" />
+    <Content Include="Views\SinhVien_63135901\Create.cshtml" />
+    <Content Include="Views\SinhVien_63135901\Delete.cshtml" />
+    <Content Include="Views\SinhVien_63135901\Details.cshtml" />
+    <Content Include="Views\SinhVien_63135901\Edit.cshtml" />
+    <Content Include="Views\SinhVien_63135901\Index.cshtml" />
+    <Content Include="Views\SinhVien_63135901\GioiThieu_63135901.cshtml" />
+    <Content Include="Views\SinhVien_63135901\TimKiem_63135901.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,9 +285,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60704</DevelopmentServerPort>
+          <DevelopmentServerPort>49446</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44329/</IISUrl>
+          <IISUrl>https://localhost:44331/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

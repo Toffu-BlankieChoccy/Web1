@@ -12,8 +12,8 @@
       <PropertyRef Name="MaSV" />
     </Key>
     <Property Name="MaSV" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="HoSV" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="TenSV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoSV" Type="nvarchar" MaxLength="255" />
+    <Property Name="TenSV" Type="nvarchar" MaxLength="255" />
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="NgaySinh" Type="date" />
     <Property Name="AnhSV" Type="nvarchar" MaxLength="50" />

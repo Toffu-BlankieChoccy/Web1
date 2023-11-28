@@ -15,10 +15,10 @@ namespace KT0720Trong_63135901.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class KT0720_63135901Entities1 : DbContext
+    public partial class KT0720_63135901Entities : DbContext
     {
-        public KT0720_63135901Entities1()
-            : base("name=KT0720_63135901Entities1")
+        public KT0720_63135901Entities()
+            : base("name=KT0720_63135901Entities")
         {
         }
     

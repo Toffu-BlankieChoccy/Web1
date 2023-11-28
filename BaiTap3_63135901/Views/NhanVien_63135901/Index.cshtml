@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Đăng ký thông tin nhân viên";
+}
+
+<h2>Đăng ký thông tin nhân viên</h2>
+
+@using (Html.BeginForm("Index", "NhanVien_63135901", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+<style>
+    td {
+        padding: 5px;
+    }
+</style>
+<div class="form-horizontal">
+    <h4>Thông tin nhân viên</h4>
+    <table>
+        <tr>
+            <td>
+                EmpID
+            </td>
+            <td>
+                <input type="text" name="EmpID" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                <input type="text" name="Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Date Of Birth
+            </td>
+            <td>
+                <input type="date" name="BirthOfDate" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <input type="email" name="Email" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                <input type="password" name="BirthOfDate" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Department
+            </td>
+            <td>
+                <input type="text" name="Department" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Avatar
+            </td>
+            <td>
+                <input type="file" name="Avatar" id="Avatar" />
+            </td>
+        </tr>
+    </table>
+   
+    <input type="submit" value="Đăng ký" class="btn btn-default" style="margin-left:60px;"/>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Quay lại", "Index")
+</div>

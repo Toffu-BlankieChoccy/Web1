@@ -26,13 +26,13 @@
     <link href="~/Content/styleAdmin.css" rel="stylesheet" />
 </head>
 <body style="margin-top:0px;">
-    <div id="banner" style="top:0px;position:absolute;">HỆ THỐNG QUẢN LÝ THÔNG TIN SINH VIÊN</div>
+    <div id="banner" style="top:0px;position:absolute;">HỆ THỐNG QUẢN LÝ THÔNG TIN NHÂN VIÊN</div>
     <div id="menu" style="margin-top:80px;">
         <div>
-            @Html.ActionLink("GIỚI THIỆU", "../GioiThieu/GioiThieu_63135901", new { @class = "a" }) &nbsp;|&nbsp;
-            @Html.ActionLink("THÊM MỚI", "../SinhVien0720_63135901/Create", new { @class = "a" })&nbsp;|&nbsp;
-            @Html.ActionLink("DANH SÁCH", "../SinhVien0720_63135901/Index", new { @class = "a" }) &nbsp;|&nbsp;
-            @Html.ActionLink("TÌM KIẾM", "../SinhVien0720_63135901/TimKiemNC", new { @class = "a" })
+            @Html.ActionLink("GIỚI THIỆU", "../SinhVien_63135901/GioiThieu_63135901", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("THÊM MỚI", "../SinhVien_63135901/Create", new { @class = "a" })&nbsp;|&nbsp;
+            @Html.ActionLink("DANH SÁCH", "../SinhVien_63135901/Index", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("TÌM KIẾM", "../SinhVien_63135901/TimKiem_63135901", new { @class = "a" })
             <hr style="display: block;border-top: 1px solid aqua;  margin: 8px 0;" />
         </div>
         <div>
@@ -43,7 +43,7 @@
         @RenderBody()
     </div>
     <div id="footer">
-        Copyright &copy; Trần Hoàng Trọng - 63135901
+        Copyright &copy; @DateTime.Now.Year
     </div>
 </body>
 </html>

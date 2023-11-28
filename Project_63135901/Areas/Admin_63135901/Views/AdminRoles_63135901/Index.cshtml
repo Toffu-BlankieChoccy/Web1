@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Project_63135901.Models.Role>
+
+@{
+    ViewData["Title"] = "Quản lý quyền truy cập";
+    Layout = "~/Areas/Admin_63135901/Views/Shared/_AdminLayout63135901.cshtml";
+}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.RoleId</th>
+                        <td>@item.RoleName</td>
+                        <td>@item.RoleDescription</td>
+                        <td>
+                            <a class="btn btn-primary m-r-5" asp-area="Admin_63135901" asp-controller="AdminRoles_63135901" asp-action="Details" asp-route-id="@item.RoleId">View</a>
+                            <a class="btn btn-warning m-r-5" asp-area="Admin_63135901" asp-controller="AdminRoles_63135901" asp-action="Edit" asp-route-id="@item.RoleId">Edit</a>
+                            <a class="btn btn-danger m-r-5" asp-area="Admin_63135901" asp-controller="AdminRoles_63135901" asp-action="Delete" asp-route-id="@item.RoleId">Delete</a>
+                            
+                        </td>
+                    </tr>
+                }
+            }
+            
+        </tbody>
+    </table>
+</div>
+

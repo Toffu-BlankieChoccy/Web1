@@ -13,8 +13,8 @@
       <PropertyRef Name="MaSV" />
     </Key>
     <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="HoSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenSV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoSV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TenSV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="GioiTinh" Type="Boolean" />
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
     <Property Name="AnhSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -36,7 +36,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="KT0720_63135901Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="KT0720_63135901Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Lops" EntityType="Self.Lop" />
     <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
     <AssociationSet Name="FK__SinhVien__MaLop__3A81B327" Association="Self.FK__SinhVien__MaLop__3A81B327">

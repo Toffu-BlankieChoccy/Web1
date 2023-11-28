@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ThiGK_63135901ModelStoreContainer" CdmEntityContainer="ThiGK_63135901Entities">
+    <EntitySetMapping Name="BoMons">
+      <EntityTypeMapping TypeName="ThiGK_63135901Model.BoMon">
+        <MappingFragment StoreEntitySet="BoMon">
+          <ScalarProperty Name="MaBM" ColumnName="MaBM" />
+          <ScalarProperty Name="TenBM" ColumnName="TenBM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiangViens">
+      <EntityTypeMapping TypeName="ThiGK_63135901Model.GiangVien">
+        <MappingFragment StoreEntitySet="GiangVien">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="HoGV" ColumnName="HoGV" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AnhGV" ColumnName="AnhGV" />
+          <ScalarProperty Name="MaBM" ColumnName="MaBM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GiangVien_TimKiem" FunctionName="ThiGK_63135901Model.Store.GiangVien_TimKiem" />
+  </EntityContainerMapping>
+</Mapping>

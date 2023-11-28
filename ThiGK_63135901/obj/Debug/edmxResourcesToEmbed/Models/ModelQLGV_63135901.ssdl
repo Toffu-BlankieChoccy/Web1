@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThiGK_63135901Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BoMon">
+    <Key>
+      <PropertyRef Name="MaBM" />
+    </Key>
+    <Property Name="MaBM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenBM" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GiangVien">
+    <Key>
+      <PropertyRef Name="MaGV" />
+    </Key>
+    <Property Name="MaGV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoGV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenGV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="AnhGV" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaBM" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__GiangVien__MaBM__3A81B327">
+    <End Role="BoMon" Type="Self.BoMon" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BoMon">
+        <PropertyRef Name="MaBM" />
+      </Principal>
+      <Dependent Role="GiangVien">
+        <PropertyRef Name="MaBM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GiangVien_TimKiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaGV" Type="varchar" Mode="In" />
+    <Parameter Name="BoMon" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="ThiGK_63135901ModelStoreContainer">
+    <EntitySet Name="BoMon" EntityType="Self.BoMon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__GiangVien__MaBM__3A81B327" Association="Self.FK__GiangVien__MaBM__3A81B327">
+      <End Role="BoMon" EntitySet="BoMon" />
+      <End Role="GiangVien" EntitySet="GiangVien" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Xác nhận thông tin đăng ký";
+}
+
+<h2>Xác nhận thông tin đăng ký</h2>
+<style>
+    .pfp{
+
+    }
+</style>
+<div>
+    <h4>Thông tin nhân viên đã đăng ký:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã số nhân viên:
+        </dt>
+        <dd>
+            @ViewBag.EmpID
+        </dd>
+
+        <dt>
+            Tên nhân viên:
+        </dt>
+        <dd>
+            @ViewBag.Name
+        </dd>
+
+        <dt>
+            Ngày sinh:
+        </dt>
+        <dd>
+            @ViewBag.BirthOfDate
+        </dd>
+
+        <dt>
+            Email:
+        </dt>
+        <dd>
+            @ViewBag.Email
+        </dd>
+
+        <dt>
+            Mật khẩu:
+        </dt>
+        <dd>
+            @ViewBag.Password
+        </dd>
+
+        <dt>
+            Phòng ban:
+        </dt>
+        <dd>
+            @ViewBag.Department
+        </dd>
+
+    </dl>
+</div>
+
+<img class="pfp" src="@ViewBag.Avatar" alt="Avatar" />
+
+<p>
+    @Html.ActionLink("Quay lại", "Index")
+</p>

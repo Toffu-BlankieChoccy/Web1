@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UD2ModelStoreContainer" CdmEntityContainer="UD2Entities">
+    <EntitySetMapping Name="LoaiMatHangs">
+      <EntityTypeMapping TypeName="UD2Model.LoaiMatHang">
+        <MappingFragment StoreEntitySet="LoaiMatHang">
+          <ScalarProperty Name="MaLoaiMatHang" ColumnName="MaLoaiMatHang" />
+          <ScalarProperty Name="TenLoaiMatHang" ColumnName="TenLoaiMatHang" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatHangs">
+      <EntityTypeMapping TypeName="UD2Model.MatHang">
+        <MappingFragment StoreEntitySet="MatHang">
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="MaLoaiMatHang" ColumnName="MaLoaiMatHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
