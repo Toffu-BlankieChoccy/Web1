@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace Project_63135901.Controllers
 {
-    public class HomeController : Controller
+    public class Home_63135901Controller : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<Home_63135901Controller> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public Home_63135901Controller(ILogger<Home_63135901Controller> logger)
         {
             _logger = logger;
         }
@@ -23,6 +23,11 @@ namespace Project_63135901.Controllers
             return View();
         }
         public IActionResult Contact()
+        {
+            return View();
+        }
+        
+        public IActionResult About()
         {
             return View();
         }
