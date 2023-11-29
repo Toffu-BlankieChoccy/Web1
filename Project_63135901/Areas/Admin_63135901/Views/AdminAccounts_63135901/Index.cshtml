@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Project_63135901.Models.Account>
+
+@{
+    ViewData["Title"] = "Danh sách tài khoản";
+    Layout = "~/Areas/Admin_63135901/Views/Shared/_AdminLayout63135901.cshtml";
+}
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin_63135901" asp-controller="HomeController_63135901" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+               <span class="breadcrumb-item active">Danh sách tài khoản</span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-8">
+                <div class="d-md-flex">
+                    <div class="m-b-10 m-r-15">
+                        <select class="custom-select" id="idrole" name="idrole" style="min-width: 180px;" asp-items="ViewBag.Role">
+                            <option value="0" disabled selected>Vai trò</option>
+                            <option value="all">Tất cả</option>
+                        </select>
+                    </div>
+                    <div class="m-b-10">
+                        <select class="custom-select" id="idstatus" name="idstatus" style="min-width: 180px;" asp-items="ViewBag.Status">
+                            <option value="" disabled selected>Trạng thái</option>
+                            <option value="all">Tất cả</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>SĐT</th>
+                        <th>Vai trò</th>
+                        <th>Trạng thái</th>
+                        <th>Đăng nhập gần đây</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.AccountId
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">
+                                        <h6 class="m-b-0 m-l-10">@item.Fullname</h6>
+                                    </div>
+                                </td>
+                                <td>@item.Email</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Role.RoleName</td>
+                                <td>
+                                    @if(item.Active)
+                                    {
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-success badge-dot m-r-10"></div>
+                                            <div>Online</div>
+                                        </div>
+                                    }else
+                                    {
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-danger badge-dot m-r-10"></div>
+                                            <div style="color:#D4D4D4">Offline</div>
+                                        </div>
+                                    }
+                                </td>
+                                <td class="text-right">
+                                    <a class="btn btn-icon btn-hover btn-sm btn-rounded" asp-area="Admin_63135901" asp-controller="AdminAccounts_63135901" asp-action="Delete" asp-route-id="@item.AccountId">
+                                        <i class="anticon anticon-delete"></i>
+                                    </a>
+                                    <a class="btn btn-icon btn-hover btn-sm btn-rounded pull-right" asp-area="Admin_63135901" asp-controller="AdminAccounts_63135901" asp-action="Edit" asp-route-id="@item.AccountId">
+                                        <i class="anticon anticon-edit"></i>
+                                    </a>
+                                    <a class="btn btn-icon btn-hover btn-sm btn-rounded pull-right" asp-area="Admin_63135901" asp-controller="AdminAccounts_63135901" asp-action="Details" asp-route-id="@item.AccountId">
+                                        <i class="fa fa-eye"></i>
+                                    </a>                                  
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -11,7 +11,7 @@ namespace Project_63135901.Models
         public string Phone { get; set; }
         public string Email { get; set; }
         public string AccPassword { get; set; }
-        public string AdvPassword { get; set; }
+        public string Salt { get; set; }
         public bool Active { get; set; }
         public string Fullname { get; set; }
         public int? RoleId { get; set; }

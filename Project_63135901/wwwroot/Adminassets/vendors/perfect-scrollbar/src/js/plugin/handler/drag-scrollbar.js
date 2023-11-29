@@ -8,7 +8,9 @@ var updateScroll = require('../update-scroll');
 
 function bindMouseScrollXHandler(element, i) {
   var currentLeft = null;
-  var currentPageX = null;
+  var 
+  
+  X = null;
 
   function updateScrollLeft(deltaX) {
     var newLeft = currentLeft + (deltaX * i.railXRatio);

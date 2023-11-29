@@ -50,7 +50,7 @@ namespace Project_63135901.Models
 
                 entity.Property(e => e.AccPassword).HasMaxLength(50);
 
-                entity.Property(e => e.AdvPassword)
+                entity.Property(e => e.Salt)
                     .HasMaxLength(6)
                     .IsFixedLength(true);
 
@@ -121,7 +121,7 @@ namespace Project_63135901.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.AdvPassword)
+                entity.Property(e => e.Salt)
                     .HasMaxLength(6)
                     .IsFixedLength(true);
 

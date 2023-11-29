@@ -24,7 +24,7 @@ namespace Project_63135901.Models
         public string Ward { get; set; }
         public DateTime? CreateDate { get; set; }
         public string AccPassword { get; set; }
-        public string AdvPassword { get; set; }
+        public string Salt { get; set; }
         public DateTime? LastLogin { get; set; }
         public bool Active { get; set; }
 

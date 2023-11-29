@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +15,12 @@ namespace Project_63135901.Areas.Admin_63135901.Controllers
     public class AdminRoles_63135901Controller : Controller
     {
         private readonly PROJECT_63135901Context _context;
+        public INotyfService _notyfService { get; } //Add notification service
 
-        public AdminRoles_63135901Controller(PROJECT_63135901Context context)
+        public AdminRoles_63135901Controller(PROJECT_63135901Context context, INotyfService notyfService)
         {
             _context = context;
+            _notyfService = notyfService;
         }
 
         // GET: Admin_63135901/AdminRoles_63135901
@@ -62,6 +66,7 @@ namespace Project_63135901.Areas.Admin_63135901.Controllers
             {
                 _context.Add(role);
                 await _context.SaveChangesAsync();
+                _notyfService.Success("Tạo mới thành công");
                 return RedirectToAction(nameof(Index));
             }
             return View(role);
@@ -101,11 +106,13 @@ namespace Project_63135901.Areas.Admin_63135901.Controllers
                 {
                     _context.Update(role);
                     await _context.SaveChangesAsync();
+                    _notyfService.Success("Tạo mới thành công");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!RoleExists(role.RoleId))
                     {
+                        _notyfService.Error("Có lỗi xảy ra");
                         return NotFound();
                     }
                     else
@@ -152,6 +159,7 @@ namespace Project_63135901.Areas.Admin_63135901.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _notyfService.Success("Xóa thành công");
             return RedirectToAction(nameof(Index));
         }
 
