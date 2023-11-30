@@ -56,6 +56,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5DdXN0b21lcnNfNjMxMzU5MDFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminPages_63135901/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5QYWdlc182MzEzNTkwMVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminPages_63135901/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5QYWdlc182MzEzNTkwMVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminPages_63135901/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5QYWdlc182MzEzNTkwMVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminPages_63135901/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5QYWdlc182MzEzNTkwMVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminPages_63135901/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5QYWdlc182MzEzNTkwMVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminProducts_63135901/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5Qcm9kdWN0c182MzEzNTkwMVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
