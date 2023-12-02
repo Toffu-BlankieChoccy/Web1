@@ -4041,6 +4041,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\zxc.png",
+      "PackagePath": "staticwebassets\\images\\products\\zxc.png"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\zzz.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\zzz.jpeg"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\zzz.png",
+      "PackagePath": "staticwebassets\\images\\products\\zzz.png"
+    },
+    {
       "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

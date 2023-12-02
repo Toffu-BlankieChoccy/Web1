@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
-
 namespace Project_63135901.Models
 {
     public partial class TransactionStatus
@@ -13,8 +11,8 @@ namespace Project_63135901.Models
         }
 
         public int TransactStatusId { get; set; }
-        public string TransStatus { get; set; }
-        public string TransactDescription { get; set; }
+        public string? TransStatus { get; set; }
+        public string? TransactDescription { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
-
 namespace Project_63135901.Models
 {
     public partial class Order
@@ -21,10 +19,10 @@ namespace Project_63135901.Models
         public bool? Paid { get; set; }
         public DateTime? PaymentDate { get; set; }
         public int? PaymentId { get; set; }
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
-        public virtual Customer Customers { get; set; }
-        public virtual TransactionStatus TransactStatus { get; set; }
+        public virtual Customer? Customers { get; set; }
+        public virtual TransactionStatus? TransactStatus { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

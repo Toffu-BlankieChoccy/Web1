@@ -23,6 +23,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin_63135901\Data\" />
     <Folder Include="Areas\Admin_63135901\Models\" />
+    <Folder Include="wwwroot\Adminassets\images\products\" />
     <Folder Include="wwwroot\assets\media\" />
   </ItemGroup>
 

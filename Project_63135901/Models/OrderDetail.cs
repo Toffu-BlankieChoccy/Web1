@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
-
 namespace Project_63135901.Models
 {
     public partial class OrderDetail
@@ -16,7 +14,7 @@ namespace Project_63135901.Models
         public decimal? Total { get; set; }
         public DateTime? ShipDate { get; set; }
 
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Order? Order { get; set; }
+        public virtual Product? Product { get; set; }
     }
 }

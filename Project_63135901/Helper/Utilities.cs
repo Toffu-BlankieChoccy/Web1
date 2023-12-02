@@ -31,7 +31,7 @@ namespace Project_63135901.Helper
                 string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", sDirectory);
                 CreateIfMissing(path);
                 string pathFile = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", sDirectory, newName);
-                var supportedTypes = new[] { "jqg", "png", "jpeg" };
+                var supportedTypes = new[] { "jpg", "png", "jpeg", "PNG", "JPG", "JPEG", "gif" };
                 var fileExt = System.IO.Path.GetExtension(file.FileName).Substring(1);
                 if (!supportedTypes.Contains(fileExt.ToLower()))
                 {
