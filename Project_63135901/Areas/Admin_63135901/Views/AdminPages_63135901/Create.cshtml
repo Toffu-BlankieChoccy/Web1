@@ -1,81 +1,105 @@
 ﻿@model Project_63135901.Models.Page
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm page";
     Layout = "~/Areas/Admin_63135901/Views/Shared/_AdminLayout63135901.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Page</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PagesId" class="control-label"></label>
-                <input asp-for="PagesId" class="form-control" />
-                <span asp-validation-for="PagesId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PageName" class="control-label"></label>
-                <input asp-for="PageName" class="form-control" />
-                <span asp-validation-for="PageName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contents" class="control-label"></label>
-                <input asp-for="Contents" class="form-control" />
-                <span asp-validation-for="Contents" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Thumb" class="control-label"></label>
-                <input asp-for="Thumb" class="form-control" />
-                <span asp-validation-for="Thumb" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(model => model.Published)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MetaDesc" class="control-label"></label>
-                <input asp-for="MetaDesc" class="form-control" />
-                <span asp-validation-for="MetaDesc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MetaKey" class="control-label"></label>
-                <input asp-for="MetaKey" class="form-control" />
-                <span asp-validation-for="MetaKey" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Alias" class="control-label"></label>
-                <input asp-for="Alias" class="form-control" />
-                <span asp-validation-for="Alias" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ordering" class="control-label"></label>
-                <input asp-for="Ordering" class="form-control" />
-                <span asp-validation-for="Ordering" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin_63135901" asp-controller="HomeController_63135901" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a asp-area="Admin_63135901" asp-controller="AdminPages_63135901" asp-action="Index" class="breadcrumb-item"><i class="anticon m-r-5"></i>Danh sách page</a>
+            <span class="breadcrumb-item active">Thêm Page</span>
+        </nav>
     </div>
 </div>
+<form asp-controller="AdminPages_63135901" asp-action="Create" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="page-header no-gutters has-tab">
+        <div class="d-md-flex m-b-15 align-items-center justify-content-between">
+            <div class="media align-items-center m-b-15"></div>
+            <div class="m-b-15">
+                <button class="btn btn-primary">
+                    <i class="anticon anticon-save"></i>
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#product-edit-basic">THÔNG TIN CHUNG</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#product-edit-option">THÔNG TIN PAGE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#product-edit-description">MÔ TẢ</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content m-t-15">
+        <div class="tab-pane fade show active" id="product-edit-basic">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="PageName">Tên Page</label>
+                        <input type="text" class="form-control" asp-for="PageName">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="Ordering">Ordering</label>
+                        <input type="text" class="form-control" asp-for="Ordering">
+                    </div>                   
+                       <div class="form-group">
+                        <label class="font-weight-semibold" for="Thumb">Ảnh sản phẩm</label>
+                            <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
+                            <span asp-validation-for="Thumb" class="text-danger"></span>
+                        </div>
+                            <div class="checkbox">
+                            <input type="checkbox" asp-for="Published" checked="" />
+                                <label for="Published">Public</label>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-option">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productSize">Title</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productColors">MetaDesc</label>
+                        <input type="text" class="form-control" asp-for="MetaDesc">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productFit">MetaKey</label>
+                        <input type="text" class="form-control" asp-for="MetaKey">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-description">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="Contents">Nội dung</label>
+                        <input type="text" class="form-control" asp-for="Contents">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@section Scripts {
 
+    <!-- page js -->
+    <script src="~/Adminassets/vendors/select2/select2.min.js"></script>
+    <script src="~/Adminassets/vendors/quill/quill.min.js"></script>
+    <script src="~/Adminassets/js/pages/e-commerce-product-edit.js"></script>
+
+
+
+}

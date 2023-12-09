@@ -23,8 +23,11 @@
   <ItemGroup>
     <Folder Include="Areas\Admin_63135901\Data\" />
     <Folder Include="Areas\Admin_63135901\Models\" />
+    <Folder Include="Views\Page_63135901\" />
     <Folder Include="wwwroot\Adminassets\images\products\" />
     <Folder Include="wwwroot\assets\media\" />
+    <Folder Include="wwwroot\images\categories\" />
+    <Folder Include="wwwroot\images\pages\" />
   </ItemGroup>
 
 </Project>

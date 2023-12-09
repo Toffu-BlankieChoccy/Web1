@@ -28,7 +28,7 @@ namespace Project_63135901.Areas.Admin_63135901.Controllers
         public IActionResult Index(int page=1, int CatID=0)
         {
             var pageNumber = page;
-            var pageSize = 10; //Show 10 rows every page
+            var pageSize = 2; //Show 10 rows every page
             List<Product> lsProduct = new List<Product>();
             if(CatID != 0)
             {
@@ -108,9 +108,7 @@ namespace Project_63135901.Areas.Admin_63135901.Controllers
                     product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
                 }
                 if (string.IsNullOrEmpty(product.Thumb)) { 
-                    product.Thumb = "default.jpg";
-                    Console.WriteLine($"Đường dẫn ảnh sau khi tải lên: {product.Thumb}");
-
+                    product.Thumb = "default.jpg";                 
                 }
                 product.Alias = Extension.ToUrlFriendly(product.ProductName);
                 product.DateModified = DateTime.Now;

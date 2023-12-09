@@ -144,7 +144,7 @@
                         <a asp-area="Admin_63135901" asp-controller="AdminAccounts_63135901" asp-action="Index">Quản lý tài khoản</a>
                     </li> @*Quản lý tài khoản*@
                     <li>
-                        <a href="basic-table.html">Quản lý danh mục</a>
+                        <a asp-area="Admin_63135901" asp-controller="AdminCategories_63135901" asp-action="Index">Quản lý danh mục</a>
                     </li> @*Quản lý danh mục*@
                     <li>
                         <a asp-area="Admin_63135901" asp-controller="AdminRoles_63135901" asp-action="Index">Quản lý quyền truy cập</a>
@@ -173,21 +173,14 @@
                     </li>
                 </ul>
             </li> @* Quản lý tin tức *@
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
+            <li class="nav-item">
+                <a class="dropdown-toggle" asp-area="Admin_63135901" asp-controller="AdminPages_63135901" asp-action="Index">
                     <span class="icon-holder">
                         <i class="anticon anticon-file"></i>
                     </span>
-                    <span class="title">Quản lý pages</span>
-                    <span class="arrow">
-                        <i class="arrow-icon"></i>
-                    </span>
+                    <span class="title">Quản lý pages</span>                 
                 </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a asp-area="Admin_63135901" asp-controller="AdminPages_63135901" asp-action="index">Danh sách Page</a>
-                    </li>                 
-                </ul>
+                
             </li> @* Quản lý pages *@
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">

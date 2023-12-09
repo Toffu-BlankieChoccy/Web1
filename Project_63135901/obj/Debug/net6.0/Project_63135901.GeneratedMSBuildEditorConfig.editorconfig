@@ -36,6 +36,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5BY2NvdW50c182MzEzNTkwMVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminCategories_63135901/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5DYXRlZ29yaWVzXzYzMTM1OTAxXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminCategories_63135901/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5DYXRlZ29yaWVzXzYzMTM1OTAxXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminCategories_63135901/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5DYXRlZ29yaWVzXzYzMTM1OTAxXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminCategories_63135901/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5DYXRlZ29yaWVzXzYzMTM1OTAxXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminCategories_63135901/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5DYXRlZ29yaWVzXzYzMTM1OTAxXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/AdminCustomers_63135901/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcQWRtaW5DdXN0b21lcnNfNjMxMzU5MDFcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,6 +140,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcSG9tZUNvbnRyb2xsZXJfNjMxMzU5MDFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/Search/ListProductsSearchPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcU2VhcmNoXExpc3RQcm9kdWN0c1NlYXJjaFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -154,6 +178,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Coding&Study/Web1/Project_63135901/Views/Home_63135901/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZV82MzEzNTkwMVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Coding&Study/Web1/Project_63135901/Views/Page_63135901/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZV82MzEzNTkwMVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Coding&Study/Web1/Project_63135901/Views/Product_63135901/Details.cshtml]

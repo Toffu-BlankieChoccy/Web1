@@ -4041,6 +4041,34 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\categories\\category-30.png",
+      "PackagePath": "staticwebassets\\images\\categories\\category-30.png"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\pages\\about-us.png",
+      "PackagePath": "staticwebassets\\images\\pages\\about-us.png"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\pages\\cach-e-trieu-hoi-ngu.png",
+      "PackagePath": "staticwebassets\\images\\pages\\cach-e-trieu-hoi-ngu.png"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\pages\\cach-e-trieu-hoi-quy.png",
+      "PackagePath": "staticwebassets\\images\\pages\\cach-e-trieu-hoi-quy.png"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\pages\\huong-dan-mua-hang.png",
+      "PackagePath": "staticwebassets\\images\\pages\\huong-dan-mua-hang.png"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\pages\\thong-tin-lien-he.png",
+      "PackagePath": "staticwebassets\\images\\pages\\thong-tin-lien-he.png"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\pages\\thong-tin-lien2.png",
+      "PackagePath": "staticwebassets\\images\\pages\\thong-tin-lien2.png"
+    },
+    {
       "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\zxc.png",
       "PackagePath": "staticwebassets\\images\\products\\zxc.png"
     },

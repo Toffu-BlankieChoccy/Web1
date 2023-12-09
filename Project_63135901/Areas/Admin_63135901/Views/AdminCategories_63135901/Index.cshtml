@@ -1,0 +1,92 @@
+﻿@using PagedList.Core.Mvc;
+@model PagedList.Core.IPagedList<Project_63135901.Models.Category>
+@{
+	ViewData["Title"] = "Danh mục sản phẩm - Page: " + ViewBag.CurrentPage;
+	Layout = "~/Areas/Admin_63135901/Views/Shared/_AdminLayout63135901.cshtml";
+}
+
+<div class="page-header">
+	<div class="header-sub-title">
+		<nav class="breadcrumb breadcrumb-dash">
+			<a asp-area="Admin_63135901" asp-controller="HomeController_63135901" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+			<span class="breadcrumb-item active">Danh mục sản phẩm: Page @ViewBag.CurrentPage</span>
+		</nav>
+	</div>
+</div>
+<div class="card">
+	<div class="card-body">
+		<div class="text-right">
+			<a class="btn btn-primary" asp-area="Admin_63135901" asp-controller="AdminCategories_63135901" asp-action="Create">
+				<i class="anticon anticon-plus-circle m-r-5"></i>
+				<span>Thêm page</span>
+			</a>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-hover e-commerce-table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Tên danh mục</th>
+						<th>Sắp xếp</th>
+						<th>Trạng thái</th>
+						<th>#</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (Model != null)
+					{
+						foreach (var item in Model)
+						{
+							string url = $"/{item.CatName}";
+							<tr>
+								<td>
+									@item.CatId
+								</td>
+								<td>
+									<a target="_blank" href="@url">@item.CatName</a>
+								</td>
+								<td>
+									@item.Ordering
+								</td>
+								<td>
+									@if (item.Publish == true)
+									{
+										<div class="d-flex alignk-items-center">
+											<div class="badge badge-success badge-dot m-r-10"></div>
+											<div>Published</div>
+										</div>
+									}
+									else
+									{
+										<div class="d-flex align-items-center">
+											<div class="badge badge-warning badge-dot m-r-10"></div>
+											<div>Concealed</div>
+										</div>
+									}
+
+								</td>
+								<td>
+									<a class="btn btn-primary m-r-5" asp-area="Admin_63135901" asp-controller="AdminCategories_63135901" asp-action="Details" asp-route-id="@item.CatId">View</a>
+									<a class="btn btn-warning m-r-5" asp-area="Admin_63135901" asp-controller="AdminCategories_63135901" asp-action="Edit" asp-route-id="@item.CatId">Edit</a>
+									<a class="btn btn-danger m-r-5" asp-area="Admin_63135901" asp-controller="AdminCategories_63135901" asp-action="Delete" asp-route-id="@item.CatId">Delete</a>
+
+								</td>
+							</tr>
+
+						}
+
+					}
+				</tbody>
+			</table>
+			<div style="position: absolute; right: 0;">
+				<div style="right:0" aria-label="Page navigation example">
+					<ul class="pagination">
+						<pager class="page-container" list="@Model" asp-area="Admin_63135901" asp-controller="AdminCategories_63135901" asp-action="Index">
+						</pager>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
