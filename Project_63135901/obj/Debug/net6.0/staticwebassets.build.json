@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VEW19Q9HQCPGq0NNbufkE60xPvzcCEyTCE4GqvJ0H6k=",
+  "Hash": "9JXaiP1K0lKCrfLehoRDAVSzxj4prOxeo4KBgdZbx+M=",
   "Source": "Project_63135901",
   "BasePath": "_content/Project_63135901",
   "Mode": "Default",
@@ -17389,6 +17389,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\pages\\thong-tin-lien-he.png"
+    },
+    {
+      "Identity": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\default.jpg",
+      "SourceId": "Project_63135901",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\",
+      "BasePath": "_content/Project_63135901",
+      "RelativePath": "images/products/default.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\default.jpg"
+    },
+    {
+      "Identity": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\whole-chicken.png",
+      "SourceId": "Project_63135901",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\",
+      "BasePath": "_content/Project_63135901",
+      "RelativePath": "images/products/whole-chicken.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\whole-chicken.png"
     },
     {
       "Identity": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\zxc.png",

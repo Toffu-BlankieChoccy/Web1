@@ -4069,6 +4069,14 @@
       "PackagePath": "staticwebassets\\images\\pages\\thong-tin-lien2.png"
     },
     {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\default.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\default.jpg"
+    },
+    {
+      "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\whole-chicken.png",
+      "PackagePath": "staticwebassets\\images\\products\\whole-chicken.png"
+    },
+    {
       "Id": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\zxc.png",
       "PackagePath": "staticwebassets\\images\\products\\zxc.png"
     },
