@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace Project_63135901.Controllers
 {
-	
+	[Authorize]
 	public class Accounts_63135901Controller : Controller
 	{
 		private readonly PROJECT_63135901Context _context;
@@ -57,18 +57,29 @@ namespace Project_63135901.Controllers
 			}
 		}
 
-		public IActionResult Dashboard()
+        [Route("tai-khoan-cua-toi.html", Name = "Dashboard")]
+        public IActionResult Dashboard()
 		{
-			return View();
+			var taikhoanID = HttpContext.Session.GetString("CustomerId");
+			if (taikhoanID != null)
+			{
+				var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.CustomersId == Convert.ToInt32(taikhoanID));
+				if(khachhang != null)
+				{
+					return View();
+				}
+			}
+			return RedirectToAction("Login");
 		}
 
 		[HttpGet]
 		[AllowAnonymous]
 		[Route("dang-ky.html", Name = "DangKy")]
-		public IActionResult Register()
+		public IActionResult DangKyTaiKhoan()
 		{
 			return View();
 		}
+
 		[HttpPost]
 		[AllowAnonymous]
 		[Route("dang-ky.html", Name = "DangKy")]
@@ -106,7 +117,7 @@ namespace Project_63135901.Controllers
 						ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 						await HttpContext.SignInAsync(claimsPrincipal);
 						return RedirectToAction("Dashboard", "Accounts_63135901");
-					}catch
+					}catch (Exception ex)
 					{
 						return RedirectToAction("DangKyTaiKhoan", "Accounts_63135901");
 					}
@@ -134,7 +145,7 @@ namespace Project_63135901.Controllers
 			}
 
 			return View();
-		}
+        }
 
 		[HttpPost]
 		[AllowAnonymous]
@@ -150,11 +161,10 @@ namespace Project_63135901.Controllers
 						return View(customer);
 
 					var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.Email.Trim()==customer.UserName);
-
 					if (khachhang == null)
 						return RedirectToAction("DangKyTaiKhoan");
-					string pass = (customer.Password + khachhang.Salt).Trim().ToMD5();
 
+					string pass = (customer.Password + khachhang.Salt.Trim()).ToMD5();
 					if(khachhang.AccPassword != pass)
 					{
 						_notyfService.Error ("Sai thông tin đăng nhập");
@@ -176,7 +186,8 @@ namespace Project_63135901.Controllers
 					ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
 					ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 					await HttpContext.SignInAsync(claimsPrincipal);
-					return RedirectToAction("Shipping", "Checkout");
+					_notyfService.Success("Đăng nhập thành công");
+					return RedirectToAction("Dashboard", "Accounts_63135901");
 				}
 			}
 			catch

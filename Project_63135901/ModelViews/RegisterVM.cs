@@ -5,6 +5,7 @@ namespace Project_63135901.ModelViews
 {
 	public class RegisterVM
 	{
+		[Key]
 		public int CustomerId { get; set; }
 
 		[Display(Name = "Họ và tên")]

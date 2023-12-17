@@ -5,6 +5,7 @@ namespace Project_63135901.ModelViews
 {
 	public class LoginViewModel
 	{
+		[Key]
 		[MaxLength(100)]
 		[Required(ErrorMessage = "Vui lòng nhập Email")]
 		[DataType(DataType.EmailAddress)]
