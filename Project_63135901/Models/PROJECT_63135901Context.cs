@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Project_63135901.ModelViews;
 
 namespace Project_63135901.Models
 {
@@ -314,7 +313,5 @@ namespace Project_63135901.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
-        public DbSet<Project_63135901.ModelViews.RegisterVM>? RegisterVM { get; set; }
     }
 }

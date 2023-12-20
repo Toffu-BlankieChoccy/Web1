@@ -57,16 +57,17 @@ namespace Project_63135901.Controllers
 			}
 		}
 
+        [Authorize]
         [Route("tai-khoan-cua-toi.html", Name = "Dashboard")]
         public IActionResult Dashboard()
 		{
-			var taikhoanID = HttpContext.Session.GetString("CustomerId");
+			var taikhoanID = HttpContext.Session.GetString("CustomersId");
 			if (taikhoanID != null)
 			{
 				var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.CustomersId == Convert.ToInt32(taikhoanID));
 				if(khachhang != null)
 				{
-					return View();
+					return View(khachhang);
 				}
 			}
 			return RedirectToAction("Login");
@@ -74,8 +75,8 @@ namespace Project_63135901.Controllers
 
 		[HttpGet]
 		[AllowAnonymous]
-		[Route("dang-ky.html", Name = "DangKy")]
-		public IActionResult DangKyTaiKhoan()
+        [Route("dang-ky.html", Name = "DangKy")]
+        public IActionResult DangKyTaiKhoan()
 		{
 			return View();
 		}
@@ -106,17 +107,18 @@ namespace Project_63135901.Controllers
 						await _context.SaveChangesAsync();
 
 						HttpContext.Session.SetString("CustomersId", khachhang.CustomersId.ToString());
-						var taiKhoanID = HttpContext.Session.GetString("CustomerId");
+						var taiKhoanID = HttpContext.Session.GetString("CustomersId");
 
 						var claims = new List<Claim>
 						{
 							new Claim(ClaimTypes.Name, khachhang.FullName),
-							new Claim("CustomerId", khachhang.CustomersId.ToString())
+							new Claim("CustomersId", khachhang.CustomersId.ToString())
 						};
 						ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
 						ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 						await HttpContext.SignInAsync(claimsPrincipal);
-						return RedirectToAction("Dashboard", "Accounts_63135901");
+                        _notyfService.Success("Đăng ký tài khoản thành công ");
+                        return RedirectToAction("Dashboard", "Accounts_63135901");
 					}catch (Exception ex)
 					{
 						return RedirectToAction("DangKyTaiKhoan", "Accounts_63135901");
@@ -135,16 +137,15 @@ namespace Project_63135901.Controllers
 
 
 		[AllowAnonymous]
-		[Route("dang-nhap.html", Name = "DangNhap")]
-		public IActionResult Login(string returnUrl = null)
+        [Route("dang-nhap.html", Name = "DangNhap")]
+        public IActionResult Login(string returnUrl = null)
 		{
-			var taikhoanID = HttpContext.Session.GetString("CustomerId");
+			var taikhoanID = HttpContext.Session.GetString("CustomersId");
 			if (taikhoanID != null)
 			{
-				return RedirectToAction("Dashboard", "Accounts_63135901");
+                return RedirectToAction("Dashboard", "Accounts_63135901");
 			}
-
-			return View();
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
 
 		[HttpPost]
@@ -152,49 +153,66 @@ namespace Project_63135901.Controllers
 		[Route("dang-nhap.html", Name = "DangNhap")]
 		public async Task<IActionResult> Login(LoginViewModel customer, string returnUrl = null)
 		{
-			try
-			{
-				if(ModelState.IsValid)
-				{
-					bool isEmail = Utilities.IsValidEmail(customer.UserName);
-					if(!isEmail)
-						return View(customer);
+            try
+            {
+                //if (ModelState.IsValid)
+                //{
+                    bool isEmail = Utilities.IsValidEmail(customer.UserName);
+                    if (!isEmail)
+                    {
+                        return View(customer);
+                    }
 
-					var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.Email.Trim()==customer.UserName);
-					if (khachhang == null)
-						return RedirectToAction("DangKyTaiKhoan");
+                    var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.Email.Trim() == customer.UserName);
 
-					string pass = (customer.Password + khachhang.Salt.Trim()).ToMD5();
-					if(khachhang.AccPassword != pass)
-					{
-						_notyfService.Error ("Sai thông tin đăng nhập");
-						return View(customer);
-					}
+                    if (khachhang == null)
+                    {
+                        return RedirectToAction("DangKyTaiKhoan");
+                    }
+                    string pass = (customer.Password + khachhang.Salt.Trim()).ToMD5();
+                    if (khachhang.AccPassword != pass)
+                    {
+                        _notyfService.Warning("Thông tin đăng nhập không chính xác");
+                        return View(customer);
+                    }
 
-					if(khachhang.Active == false)
-						return RedirectToAction("ThongBao", "Accounts_63135901");
+                    //Kiểm tra tài khoản có bị disable không?
+                    if (khachhang.Active == false)
+                    {
+                        return RedirectToAction("ThongBao", "Accounts_663135901");
+                    }
 
+                    //Lưu session vào MaKH
+                    HttpContext.Session.SetString("CustomersId", khachhang.CustomersId.ToString());
+                    var taikhoanID = HttpContext.Session.GetString("CustomersId");
+                    //Identity
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, khachhang.FullName),
+                        new Claim("CustomersId", khachhang.CustomersId.ToString())
+                    };
+                    ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
+                    ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                    await HttpContext.SignInAsync(claimsPrincipal);
+                    _notyfService.Success("Đăng nhập thành công");
+                    return RedirectToAction("Dashboard", "Accounts_63135901");
+                //}
+            }
+            catch
+            {
+                return RedirectToAction("DangKyTaiKhoan", "Accounts_63135901");
+            }
+            _notyfService.Warning("Lỗi");
+            return View(customer);
+        }
 
-					HttpContext.Session.SetString("CustomerId", khachhang.CustomersId.ToString());
-					var taikhoanID = HttpContext.Session.GetString("CustomerId");
-
-					var claims = new List<Claim>
-					{
-						new Claim(ClaimTypes.Name, khachhang.FullName),
-						new Claim("CustomerId", khachhang.CustomersId.ToString())
-					};
-					ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
-					ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-					await HttpContext.SignInAsync(claimsPrincipal);
-					_notyfService.Success("Đăng nhập thành công");
-					return RedirectToAction("Dashboard", "Accounts_63135901");
-				}
-			}
-			catch
-			{
-				return RedirectToAction("DangKyTaiKhoan", "Accounts_63135901");
-			}
-			return View(customer);
+		[HttpGet]
+		[Route("dang-xuat.html", Name = "Logout")]
+		public IActionResult Logout()
+		{
+			HttpContext.SignOutAsync();
+			HttpContext.Session.Remove("CustomersId");
+			return RedirectToAction("Index", "Home_63135901");
 		}
 	}
 }
