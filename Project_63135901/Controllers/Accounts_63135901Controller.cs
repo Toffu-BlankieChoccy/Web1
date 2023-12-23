@@ -67,7 +67,13 @@ namespace Project_63135901.Controllers
 				var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.CustomersId == Convert.ToInt32(taikhoanID));
 				if(khachhang != null)
 				{
-					return View(khachhang);
+                    var lsDonHang = _context.Orders
+						.Include(x => x.TransactStatus)
+						.AsNoTracking()
+						.Where(x => x.CustomersId == khachhang.CustomersId)
+						.OrderByDescending(x=>x.OrderDate).ToList();
+					ViewBag.DonHang = lsDonHang;
+                    return View(khachhang);
 				}
 			}
 			return RedirectToAction("Login");
@@ -179,7 +185,7 @@ namespace Project_63135901.Controllers
                     //Kiểm tra tài khoản có bị disable không?
                     if (khachhang.Active == false)
                     {
-                        return RedirectToAction("ThongBao", "Accounts_663135901");
+                        return RedirectToAction("ThongBao", "Accounts_63135901");
                     }
 
                     //Lưu session vào MaKH
@@ -214,5 +220,45 @@ namespace Project_63135901.Controllers
 			HttpContext.Session.Remove("CustomersId");
 			return RedirectToAction("Index", "Home_63135901");
 		}
-	}
+
+
+        [HttpPost]
+        public IActionResult ChangePassword(ChangePasswordViewModel model)
+        {
+            try
+            {
+                var taikhoanID = HttpContext.Session.GetString("CustomersId");
+                if (taikhoanID == null)
+                {
+                    return RedirectToAction("Login", "Accounts_63135901");
+                }
+                if (ModelState.IsValid)
+                {
+                    var taikhoan = _context.Customers.Find(Convert.ToInt32(taikhoanID));
+                    if (taikhoan == null)
+                    {
+                        return RedirectToAction("Login", "Accounts_63135901");
+                    }
+                    var pass = (model.PasswordNow.Trim() + taikhoan.Salt.Trim()).ToMD5();
+                    if (pass == taikhoan.AccPassword)
+                    {
+                        string passnew = (model.Password.Trim() + taikhoan.Salt.Trim()).ToMD5();
+                        taikhoan.AccPassword = passnew;
+                        _context.Update(taikhoan);
+                        _context.SaveChanges();
+                        _notyfService.Success("Cập nhật tài khoản thành công");
+                        return RedirectToAction("Dashboard", "Accounts_63135901");
+                    }
+                }
+
+            }
+            catch
+            {
+                _notyfService.Error("Cập nhật tài khoản không thành công");
+                return RedirectToAction("Dashboard", "Accounts_63135901");
+            }
+            _notyfService.Error("Cập nhật tài khoản không thành công");
+            return RedirectToAction("Dashboard", "Accounts_63135901");
+        }
+    }
 }

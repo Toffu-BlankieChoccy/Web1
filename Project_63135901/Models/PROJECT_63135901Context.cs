@@ -171,6 +171,8 @@ namespace Project_63135901.Models
 
                 entity.Property(e => e.ShipDate).HasColumnType("datetime");
 
+                entity.Property(e => e.TotalMoney).HasColumnType("decimal(10, 2)");
+
                 entity.Property(e => e.TransactStatusId).HasColumnName("TransactStatusID");
 
                 entity.HasOne(d => d.Customers)

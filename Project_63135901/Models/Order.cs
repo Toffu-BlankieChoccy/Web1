@@ -20,6 +20,7 @@ namespace Project_63135901.Models
         public DateTime? PaymentDate { get; set; }
         public int? PaymentId { get; set; }
         public string? Note { get; set; }
+        public decimal? TotalMoney { get; set; }
 
         public virtual Customer? Customers { get; set; }
         public virtual TransactionStatus? TransactStatus { get; set; }
