@@ -140,8 +140,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcSG9tZUNvbnRyb2xsZXJfNjMxMzU5MDFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/Search/ListProductsSearchPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcU2VhcmNoXExpc3RQcm9kdWN0c1NlYXJjaFBhcnRpYWwuY3NodG1s
+[E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/Search_63135901/ListProductsSearchPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fNjMxMzU5MDFcVmlld3NcU2VhcmNoXzYzMTM1OTAxXExpc3RQcm9kdWN0c1NlYXJjaFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Coding&Study/Web1/Project_63135901/Areas/Admin_63135901/Views/Shared/Error.cshtml]
