@@ -1,10 +1,26 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Project_63135901.Helper
 {
 	public class Utilities
 	{
-		public static bool IsValidEmail(string email)
+        public static string StripHTML(string input)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(input))
+                {
+                    return Regex.Replace(input, "<.*?>", String.Empty);
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            return null;
+        }
+        public static bool IsValidEmail(string email)
 		{
 			var trimmedEmail = email.Trim();
 

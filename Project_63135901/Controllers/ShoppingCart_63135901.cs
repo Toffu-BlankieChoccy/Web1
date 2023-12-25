@@ -37,21 +37,16 @@ namespace Project_63135901.Controllers
         [Route("api/cart/add")]
         public IActionResult AddToCart(int productID, int? quantity)
         {
-            List<CartItem> gioHang = GioHang;
+            List<CartItem> cart = GioHang;
             // thêm sản phảm vào giỏ hàng
             try
             {
-                CartItem item = gioHang.SingleOrDefault(p => p.product.ProductId == productID);
+                CartItem item = cart.SingleOrDefault(p => p.product.ProductId == productID);
                 if (item != null)
                 {
-                    if (quantity.HasValue)
-                    {
-                        item.amount = quantity.Value;
-                    }
-                    else
-                    {
-                        item.amount++;
-                    }
+                    item.amount = item.amount + quantity.Value;
+                    //Lưu lại session
+                    HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
                 }
                 else
                 {
@@ -61,10 +56,10 @@ namespace Project_63135901.Controllers
                         amount = quantity.HasValue ? quantity.Value : 1,
                         product = hh
                     };
-                    gioHang.Add(item); // thêm vào giỏ
+                    cart.Add(item); // thêm vào giỏ
                 }
                 // lưu lại session
-                HttpContext.Session.Set<List<CartItem>>("GioHang", gioHang);
+                HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
                 _notyfService.Success("Sản phẩm đã được thêm vào giỏ hàng");
                 return Json(new { success = true });
             }
@@ -75,7 +70,33 @@ namespace Project_63135901.Controllers
         }
 
 
-        [HttpPost]
+		[HttpPost]
+		[Route("api/cart/update")]
+		public IActionResult UpdateCart(int productID, int? quantity)
+		{
+            var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
+            try
+            {
+                if (cart != null)
+                {
+                    CartItem item = cart.SingleOrDefault(p => p.product.ProductId == productID);
+                    if (item != null && quantity.HasValue)
+                    {
+                        item.amount = quantity.Value;
+                    }
+                    // Lưu lại session
+                    HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
+                }
+                return Json(new { success = true });
+            }
+            catch
+            {
+                return Json(new { success = false });
+            }
+        }
+
+
+		[HttpPost]
         [Route("api/cart/remove")]
         public IActionResult Remove(int productID)
         {

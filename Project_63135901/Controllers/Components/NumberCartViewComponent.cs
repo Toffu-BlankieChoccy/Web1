@@ -8,8 +8,7 @@ namespace Project_63135901.Controllers.Components
     {
         public IViewComponentResult Invoke()
         {
-            var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
-            
+            var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");          
             return View(cart);
         }
     }
