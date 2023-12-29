@@ -42,7 +42,6 @@
                         <th>SĐT</th>
                         <th>Email</th>
                         <th>Địa chỉ</th>
-                        <th>Tỉnh/thành</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -66,10 +65,17 @@
                                 </td>
                                 <td>
                                     @item.CusAddress
-                                </td>    
-                                <td>
-                                    @item.Location.LocationName
-                                </td>                                                         
+                                </td>
+                                @if (item.Location != null)
+                                {
+                                    <td>
+                                        @item.Location.LocationName
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>Location Not Available</td>
+                                }
                                 <td>
                                     <a class="btn btn-primary m-r-5" asp-area="Admin_63135901" asp-controller="AdminCustomers_63135901" asp-action="Details" asp-route-id="@item.CustomersId">View</a>
                                     <a class="btn btn-warning m-r-5" asp-area="Admin_63135901" asp-controller="AdminCustomers_63135901" asp-action="Edit" asp-route-id="@item.CustomersId">Edit</a>
