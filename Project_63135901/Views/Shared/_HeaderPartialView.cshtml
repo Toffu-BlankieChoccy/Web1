@@ -1,0 +1,195 @@
+﻿<header class="main-header_area position-relative">
+	<div class="header-top border-bottom d-none d-md-block">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-6">
+					<div class="header-top-left">
+						<ul class="dropdown-wrap text-matterhorn">
+							<li>
+								Call MeHoo
+								<a href="tel://0787242615">0787242615</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="header-top-right text-matterhorn">
+						<p class="shipping mb-0">Miễn phí giao hàng vào dịp <span>Tết</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-middle py-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-12">
+					<div class="header-middle-wrap">
+						<a style="height:90px; width: 90px" href="/" class="header-logo">
+							<img src="~/assets/images/logo/jackwalking.gif" alt="Header Logo">
+							<span class="Title">63135901</span>
+						</a>
+						<div class="header-search-area d-none d-lg-block">
+						</div>
+						<div class="header-right">
+							<ul>
+								<li class="dropdown d-none d-md-block">
+									<button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-expanded="false">
+										<i class="pe-7s-users"></i>
+									</button>
+									<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
+										@if (User.Identity.IsAuthenticated)
+										{
+											<li><a class="dropdown-item" href="tai-khoan-cua-toi.html">Tài khoản của tôi</a></li>
+										}
+										else
+										{
+											<li>
+												<a class="dropdown-item" href="/dang-ky.html">Đăng kí</a>
+												<a class="dropdown-item" href="/dang-nhap.html">Đăng nhập</a>
+											</li>
+										}
+									</ul>
+								</li>
+								<li id="numberCart" class="minicart-wrap me-3 me-lg-0">
+									@await Component.InvokeAsync("NumberCart")
+								</li>
+								<li class="mobile-menu_wrap d-block d-lg-none">
+									<a href="#mobileMenu" class="mobile-menu_btn toolbar-btn pl-0">
+										<i class="pe-7s-menu"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-header header-sticky" data-bg-color="#bac34e">
+		<div class="container">
+			<div class="main-header_nav position-relative">
+				<div class="row align-items-center">
+					<div class="col-lg-12 d-none d-lg-block">
+						<div class="main-menu">
+							<nav class="main-nav">
+								<ul>
+									<li class="drop-holder">
+										<a href="/">Trang Chủ</a>
+									</li>
+									<li>
+										<a href="/gioi-thieu.html">Về Chúng Tôi</a>
+									</li>
+
+									<li>
+										<a asp-controller="Product_63135901" asp-action="Index">Shop</a>
+									</li>
+
+									<li>
+										<a href="/page/huong-dan-mua-hang">Hướng Dẫn</a>
+									</li>
+									<li>
+										<a href="/lien-he.html">Liên Hệ</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mobile-menu_wrapper" id="mobileMenu">
+		<div class="offcanvas-body">
+			<div class="inner-body">
+				<div class="offcanvas-top">
+					<a href="#" class="button-close"><i class="pe-7s-close"></i></a>
+				</div>
+				<div class="offcanvas-user-info text-center px-6 pb-5">
+					<div class=" text-silver">
+						<p class="shipping mb-0">Miễn phí giao hàng vào dịp <span class="text-primary">Tết</span></p>
+					</div>
+					<ul class="dropdown-wrap justify-content-center text-silver">
+
+						<li class="dropdown dropup">
+							<button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButtonTwo" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="pe-7s-users"></i>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButtonTwo">
+								@if (User.Identity.IsAuthenticated)
+								{
+									<li><a class="dropdown-item" href="tai-khoan-cua-toi.html">Tài khoản của tôi</a></li>
+								}
+								else
+								{
+									<li>
+										<a class="dropdown-item" href="/dang-ky.html">Đăng kí</a>
+										<a class="dropdown-item" href="/dang-nhap.html">Đăng nhập</a>
+									</li>
+								}
+							</ul>
+						</li>
+						<li>
+							<a href="wishlist.html">
+								<i class="pe-7s-like"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="offcanvas-menu_area">
+					<nav class="offcanvas-navigation">
+						<ul class="mobile-menu">
+							<li class="menu-item-has-children">
+								<a href="/">
+									<span class="mm-text">
+										Trang chủ
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="about.html">
+									<span class="mm-text">Về chúng tôi</span>
+								</a>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">
+									<span class="mm-text">
+										Shop
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="contact.html">
+									<span class="mm-text">Liên hệ chúng tôi</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="offcanvas-search_wrapper" id="searchBar">
+		<div class="offcanvas-body">
+			<div class="container h-100">
+				<div class="offcanvas-search">
+					<div class="offcanvas-top">
+						<a href="#" class="button-close"><i class="pe-7s-close"></i></a>
+					</div>
+					<span class="searchbox-info">Start typing and press Enter to search</span>
+					<form action="#" class="hm-searchbox">
+						<input type="text" placeholder="Search">
+						<button class="search-btn" type="submit"><i class="pe-7s-search"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="offcanvas-minicart_wrapper" id="miniCart">
+		@await Component.InvokeAsync("HeaderCart")	
+	</div>
+	<div class="global-overlay"></div>
+</header>

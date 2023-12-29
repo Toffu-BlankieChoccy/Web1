@@ -1,0 +1,146 @@
+﻿@model Project_63135901.Models.Product
+
+@{
+    ViewData["Title"] = "Chỉnh sửa";
+    Layout = "~/Areas/Admin_63135901/Views/Shared/_AdminLayout63135901.cshtml";
+}
+
+<form asp-controller="AdminProducts_63135901" asp-action="Edit" asp-route-id="@Model.ProductId" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ProductId" />
+    <input type="hidden" asp-for="Thumb" />
+    <input type="hidden" asp-for="DateCreated" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="page-header no-gutters has-tab">
+        <div class="d-md-flex m-b-15 align-items-center justify-content-between">
+            <div class="media align-items-center m-b-15"></div>
+            <div class="m-b-15">
+                <button class="btn btn-primary">
+                    <i class="anticon anticon-save"></i>
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#product-edit-basic">Basic Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#product-edit-option">Option Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#product-edit-description">Description</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content m-t-15">
+        <div class="tab-pane fade show active" id="product-edit-basic">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productName">Tên sản phẩm</label>
+                        <input type="text" class="form-control" asp-for="ProductName">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="ShortDescription">Mô tả ngắn</label>
+                        <input type="text" class="form-control" asp-for="ShortDescription">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold" for="productPrice">Giá bán</label>
+                            <input type="text" class="form-control" asp-for="Price">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold" for="productPrice">Giảm giá</label>
+                            <input type="text" class="form-control" asp-for="Discount">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold" for="productCategory">Danh mục</label>
+                            <select class="custom-select" asp-for="CatId" style="min-width: 180px;" asp-items="ViewBag.Product">
+                                <option value="0" disabled selected>Danh mục</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold" for="productName">Số lượng</label>
+                            <input type="text" class="form-control" asp-for="UnitsInStock">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productBrand">Ảnh sản phẩm</label>
+                        <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
+                        <span asp-validation-for="Thumb" class="text-danger"></span>
+                    </div>
+                    <div class="block">
+                        <div class="checkbox">
+                            <input type="checkbox" asp-for="Active" checked="" />
+                            <label for="Active">Public</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" asp-for="HomeFlag" />
+                            <label for="HomeFlag">Trang chủ</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" asp-for="BestSellers" />
+                            <label for="BestSellers">Bán chạy</label>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-option">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productSize">Title</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productColors">MetaDesc</label>
+                        <input type="text" class="form-control" asp-for="MetaDesc">
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productFit">MetaKey</label>
+                        <input type="text" class="form-control" asp-for="MetaKey">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productFit">Tags</label>
+                        <input type="text" class="form-control" asp-for="Tags">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-description">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="ProductDescription">Mô tả</label>
+                        <input type="text" class="form-control" asp-for="ProductDescription">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+
+    <!-- page js -->
+    <script src="~/Adminassets/vendors/select2/select2.min.js"></script>
+    <script src="~/Adminassets/vendors/quill/quill.min.js"></script>
+    <script src="~/Adminassets/js/pages/e-commerce-product-edit.js"></script>
+
+
+
+}
+
+
+
