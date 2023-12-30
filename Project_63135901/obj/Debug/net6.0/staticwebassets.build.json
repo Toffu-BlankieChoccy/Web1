@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WDDvwtr+TaB1wRveagu6TmxuR2TPlbCDsh1RjPXj7M4=",
+  "Hash": "D8uw99m9DbCaL2YDosCkUkqN2n4bwSDazaIJFC33aNU=",
   "Source": "Project_63135901",
   "BasePath": "_content/Project_63135901",
   "Mode": "Default",
@@ -18035,6 +18035,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\akkodesignerstudiomod005.png"
+    },
+    {
+      "Identity": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\banh-mi.png",
+      "SourceId": "Project_63135901",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\",
+      "BasePath": "_content/Project_63135901",
+      "RelativePath": "images/products/banh-mi.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\banh-mi.png"
     },
     {
       "Identity": "E:\\Coding&Study\\Web1\\Project_63135901\\wwwroot\\images\\products\\bluecow.png",

@@ -33,7 +33,7 @@ namespace Project_63135901.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server = LAPTOP-UGEFPH5D; Database = PROJECT_63135901; Integrated Security = true;");
+                optionsBuilder.UseSqlServer("Server=LAPTOP-UGEFPH5D;Database=PROJECT_63135901;Integrated Security=true;");
             }
         }
 
@@ -41,9 +41,7 @@ namespace Project_63135901.Models
         {
             modelBuilder.Entity<Account>(entity =>
             {
-                entity.Property(e => e.AccountId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("AccountID");
+                entity.Property(e => e.AccountId).HasColumnName("AccountID");
 
                 entity.Property(e => e.AccPassword).HasMaxLength(50);
 
@@ -74,11 +72,9 @@ namespace Project_63135901.Models
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.HasKey(e => e.CatId)
-                    .HasName("PK__Categori__6A1C8ADA6D9E4287");
+                    .HasName("PK__Categori__6A1C8ADAE72F6839");
 
-                entity.Property(e => e.CatId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("CatID");
+                entity.Property(e => e.CatId).HasColumnName("CatID");
 
                 entity.Property(e => e.Alias).HasMaxLength(250);
 
@@ -104,11 +100,9 @@ namespace Project_63135901.Models
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.HasKey(e => e.CustomersId)
-                    .HasName("PK__Customer__EB5B581EB20191B8");
+                    .HasName("PK__Customer__EB5B581E5D282BF9");
 
-                entity.Property(e => e.CustomersId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("CustomersID");
+                entity.Property(e => e.CustomersId).HasColumnName("CustomersID");
 
                 entity.Property(e => e.AccPassword).HasMaxLength(50);
 
@@ -148,9 +142,7 @@ namespace Project_63135901.Models
 
             modelBuilder.Entity<Location>(entity =>
             {
-                entity.Property(e => e.LocationId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("LocationID");
+                entity.Property(e => e.LocationId).HasColumnName("LocationID");
 
                 entity.Property(e => e.LocationName).HasMaxLength(50);
 
@@ -165,9 +157,7 @@ namespace Project_63135901.Models
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.Property(e => e.OrderId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("OrderID");
+                entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
                 entity.Property(e => e.CusAddress).HasMaxLength(255);
 
@@ -211,9 +201,7 @@ namespace Project_63135901.Models
 
             modelBuilder.Entity<OrderDetail>(entity =>
             {
-                entity.Property(e => e.OrderDetailId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("OrderDetailID");
+                entity.Property(e => e.OrderDetailId).HasColumnName("OrderDetailID");
 
                 entity.Property(e => e.Discount).HasColumnType("decimal(10, 2)");
 
@@ -239,11 +227,9 @@ namespace Project_63135901.Models
             modelBuilder.Entity<Page>(entity =>
             {
                 entity.HasKey(e => e.PagesId)
-                    .HasName("PK__Pages__D73F818DE7B33437");
+                    .HasName("PK__Pages__D73F818DEDE44C41");
 
-                entity.Property(e => e.PagesId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("PagesID");
+                entity.Property(e => e.PagesId).HasColumnName("PagesID");
 
                 entity.Property(e => e.Alias).HasMaxLength(250);
 
@@ -264,9 +250,7 @@ namespace Project_63135901.Models
 
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.Property(e => e.ProductId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ProductID");
+                entity.Property(e => e.ProductId).HasColumnName("ProductID");
 
                 entity.Property(e => e.Alias).HasMaxLength(250);
 
@@ -304,9 +288,7 @@ namespace Project_63135901.Models
 
             modelBuilder.Entity<Role>(entity =>
             {
-                entity.Property(e => e.RoleId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("RoleID");
+                entity.Property(e => e.RoleId).HasColumnName("RoleID");
 
                 entity.Property(e => e.RoleDescription).HasMaxLength(255);
 
@@ -315,9 +297,7 @@ namespace Project_63135901.Models
 
             modelBuilder.Entity<Shipper>(entity =>
             {
-                entity.Property(e => e.ShipperId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ShipperID");
+                entity.Property(e => e.ShipperId).HasColumnName("ShipperID");
 
                 entity.Property(e => e.Company).HasMaxLength(250);
 
@@ -333,13 +313,11 @@ namespace Project_63135901.Models
             modelBuilder.Entity<TransactionStatus>(entity =>
             {
                 entity.HasKey(e => e.TransactStatusId)
-                    .HasName("PK__Transact__C8BCD276031186C6");
+                    .HasName("PK__Transact__C8BCD27619706E18");
 
                 entity.ToTable("TransactionStatus");
 
-                entity.Property(e => e.TransactStatusId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("TransactStatusID");
+                entity.Property(e => e.TransactStatusId).HasColumnName("TransactStatusID");
 
                 entity.Property(e => e.TransStatus).HasMaxLength(50);
 
